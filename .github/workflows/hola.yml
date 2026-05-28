@@ -28,8 +28,8 @@ jobs:
 
       
       - name: condiciones 1
-        if: github.event_name == 'push'
-        run: echo "evento push activado"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: echo "evento push activado hacia main"
 
       - name: condiciones 2
         if: github.event_name == 'pull request'
