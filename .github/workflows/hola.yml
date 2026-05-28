@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   saludar-jobs:
@@ -12,3 +13,10 @@ jobs:
     steps:
       - name: mostrar saludo
         run: echo "hola desde github actions"
+
+      - name: mostrar perfil
+        run: |
+          echo " autor: ${{ github.actor }} "
+          echo " evento: ${{ github.event_name }} "
+          echo " repo: ${{ github.repository }} "
+          echo " ref: ${{ github.ref_name }}"
